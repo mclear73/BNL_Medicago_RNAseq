@@ -18,7 +18,7 @@ The goal of this wiki is to provide a road map for data analysis files, figures,
 	* [Leaf\_WGCNA\_Node](https://www.dropbox.com/s/ta612v450f8gw21/Root_CytoNode_allMods.txt?dl=0)
 	* [Leaf\_WGCNA\_Edge](https://www.dropbox.com/s/dmr2dlz0jig65wq/Leaf_CytoEdge_allMods.txt?dl=0) 
 *  Root co-expression network determined by WGCNA (Probably better too look at the visualization for this information, however the raw node/edge data is deposited here)
-	* [Root\_WGCNA\_Node](https://www.dropbox.com/s/ezkmdousysyxyb4/Root_CytoNode_allMods.txt?dl=0)
+	* [Root\_WGCNA\_Node](https://www.dropbox.com/s/ta612v450f8gw21/Root_CytoNode_allMods.txt?dl=0)
 	* [Root\_WGCNA\_Edge](https://www.dropbox.com/s/y1mqz3i6qhy8snk/Root_CytoEdge_allMods.txt?dl=0)
 *  [Overenriched GO-terms in DEG by treatment](https://www.dropbox.com/s/qv64kd4nmuy4ded/DEG_Overenrichment_gProfiler.csv?dl=0)
 *  Overenriched GO-terms within co-expression modules
