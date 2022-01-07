@@ -1,6 +1,6 @@
 # Overview of *M. truncatula* RNAseq and GWAS analyses and location of source code and data files
 The goal of this wiki is to provide a road map for data analysis files, figures, and source code. For a more in-depth description of how to run these analyses please see my [gitlab project here](https://gitlab.com/mclear73/medicago-rnaseq).  
-## Description of available RNAseq data files (as of January 5, 2021)
+## Description of available RNAseq data files (as of January 7, 2021)
 ### Input/Reference Files
 * [Compiled Raw Count file](https://www.dropbox.com/s/47uxns3am4ywxgv/All_Counts_Raw.csv?dl=0)
 * [GMT File for Running GO Term Enrichment](https://www.dropbox.com/s/ikzcd1c5eewqaa5/mtruncatula_v5.gmt?dl=0)
