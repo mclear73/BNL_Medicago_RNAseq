@@ -1,6 +1,6 @@
 # Overview of *M. truncatula* RNAseq and GWAS analyses and location of source code and data files
 The goal of this wiki is to provide a road map for data analysis files, figures, and source code. For a more in-depth description of how to run these analyses please see my [gitlab project here](https://gitlab.com/mclear73/medicago-rnaseq).  
-## Description of available RNAseq data files (as of January 7, 2022)
+## Description of available RNAseq data files (as of January 10, 2022)
 ### Input/Reference Files
 * [Compiled Raw Count file](https://www.dropbox.com/s/47uxns3am4ywxgv/All_Counts_Raw.csv?dl=0)
 * [GMT File for Running GO Term Enrichment](https://www.dropbox.com/s/ikzcd1c5eewqaa5/mtruncatula_v5.gmt?dl=0)
@@ -9,10 +9,10 @@ The goal of this wiki is to provide a road map for data analysis files, figures,
 * [Compiled Normalized Transcripts per Million (TPM) Count file](https://www.dropbox.com/s/29gp73jzqyn2ylu/All_Counts_TPM.csv?dl=0)
 * [Compiled Normalized Fragments per Kilobase Million (FPKM) Count file](https://www.dropbox.com/s/7aemxhmlq58osst/All_Counts_FPKM.csv?dl=0)
 * [Metadata associated with samples](https://www.dropbox.com/s/mzc74y7vrl0hcr7/allMetadata.csv?dl=0)
-* [Compiled annotation for *M. truncatula*](https://www.dropbox.com/s/405i5dpo63br1mn/M_truncV5_noArab.csv?dl=0). Includes:
+* [Compiled annotation for *M. truncatula*](https://www.dropbox.com/s/hd1k3dnje2uc740/M_truncV5.csv?dl=0). Includes:
 	* v4 and v5 gene names
 	* Pfam domain, KOG, KEGG, GO, Panther, Interpro annotations
-	* Arabidopsis thaliana top blast hit and gene description ***STILL IN PROGRESS***
+	* [Arabidopsis thaliana top blast hit](https://www.dropbox.com/s/fhkfrut18517bkh/BLAST2_Athaliana_output.txt?dl=0) and gene description
 	* Plant TFDB transcription factor family (if identified as a transcription factor)
 * [Name conversion file between v4 and v5 genomes](https://www.dropbox.com/s/kq4dkxjze7sgoxl/MtrunA17r5.0-ANR_geneIDs.txt?dl=0)
 ### Compiled DEGs with annotation
