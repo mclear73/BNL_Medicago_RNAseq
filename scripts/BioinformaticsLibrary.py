@@ -218,17 +218,17 @@ def goEnrich_DotPlot(BP_enrich=None, CC_enrich=None, MF_enrich=None,
           CC = pd.read_csv(CC_enrich)
           MF = pd.read_csv(MF_enrich)
           #Modified for Revigo update
-#            BP['GeneRatio'] = BP['intersection_size'] / BP['term_size']
-#            CC['GeneRatio'] = CC['intersection_size'] / CC['term_size']
-#            MF['GeneRatio'] = MF['intersection_size'] / MF['term_size']
+          BP['GeneRatio'] = BP['intersection_size'] / BP['term_size']
+          CC['GeneRatio'] = CC['intersection_size'] / CC['term_size']
+          MF['GeneRatio'] = MF['intersection_size'] / MF['term_size']
 
-          BP['GeneRatio'] = BP[' Frequency']
-          CC['GeneRatio'] = CC[' Frequency']
-          MF['GeneRatio'] = MF[' Frequency']
-        
-          BP = BP.merge(full_Enrich, how='left', left_on='TermID', right_on='native')
-          CC = CC.merge(full_Enrich, how='left', left_on='TermID', right_on='native')
-          MF = MF.merge(full_Enrich, how='left', left_on='TermID', right_on='native')
+          #BP['GeneRatio'] = BP[' Frequency']
+          #CC['GeneRatio'] = CC[' Frequency']
+          #MF['GeneRatio'] = MF[' Frequency']
+                  
+          BP = BP.merge(full_Enrich, how='left', left_on='native', right_on='native')
+          CC = CC.merge(full_Enrich, how='left', left_on='native', right_on='native')
+          MF = MF.merge(full_Enrich, how='left', left_on='native', right_on='native')
 
 
       else:
@@ -238,10 +238,10 @@ def goEnrich_DotPlot(BP_enrich=None, CC_enrich=None, MF_enrich=None,
             BP = full_Enrich[full_Enrich['source'] == 'GO:BP']
             CC = full_Enrich[full_Enrich['source'] == 'GO:CC']
             MF = full_Enrich[full_Enrich['source'] == 'GO:MF']
-            
-      BP = BP[BP['p_value'] <= adj_Pthresh]
-      CC = CC[CC['p_value'] <= adj_Pthresh]
-      MF = MF[MF['p_value'] <= adj_Pthresh]
+#      return(BP)      
+      BP = BP[BP['p_value_x'] <= adj_Pthresh]
+      CC = CC[CC['p_value_x'] <= adj_Pthresh]
+      MF = MF[MF['p_value_x'] <= adj_Pthresh]
       
       if subset_column_list is not None:
             BP = BP[subset_column_list]
@@ -252,7 +252,7 @@ def goEnrich_DotPlot(BP_enrich=None, CC_enrich=None, MF_enrich=None,
       
       f, ax = plt.subplots(figsize=(int(plot_width), int(plot_height)))
       sns.scatterplot(
-          data=BP, x="Comparison", y=" Name", hue="p_value", 
+          data=BP, x="Comparison_x", y="name_x", hue="p_value_x", 
           size="GeneRatio",
           sizes=(30, 300), hue_norm=hue, legend="brief", palette="YlOrBr_r")
       ax.set_ylabel('GO Term', size=14)
@@ -264,7 +264,7 @@ def goEnrich_DotPlot(BP_enrich=None, CC_enrich=None, MF_enrich=None,
       
       f, ax = plt.subplots(figsize=(int(plot_width), int(plot_height)))
       sns.scatterplot(
-          data=CC, x="Comparison", y=" Name", hue="p_value", 
+          data=CC, x="Comparison_x", y="name_x", hue="p_value_x", 
           size="GeneRatio",
           sizes=(30, 300), hue_norm=hue, legend="brief", palette="YlOrBr_r")
       ax.set_ylabel('GO Term', size=14)
@@ -276,7 +276,7 @@ def goEnrich_DotPlot(BP_enrich=None, CC_enrich=None, MF_enrich=None,
       
       f, ax = plt.subplots(figsize=(int(plot_width), int(plot_height)))
       sns.scatterplot(
-          data=MF, x="Comparison", y=" Name", hue="p_value", 
+          data=MF, x="Comparison_x", y="name_x", hue="p_value_x", 
           size="GeneRatio",
           sizes=(30, 300), hue_norm=hue, legend="brief", palette="YlOrBr_r")
       ax.set_ylabel('GO Term', size=14)

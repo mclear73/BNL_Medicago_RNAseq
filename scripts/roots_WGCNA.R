@@ -359,6 +359,29 @@ moduleColors = mergedColors
 colorOrder = c("grey", standardColors(50));
 moduleLabels = match(moduleColors, colorOrder)-1;
 MEs = mergedMEs;
+
+#####################################################################################
+#for cytoscape export
+annot = read.csv("All_Medicago_Counts.csv");
+
+#select modules
+modules = moduleColors
+
+#select probes
+probes = names(datExpr);
+
+inModule = (moduleColors==modules);
+modProbes = probes[inModule];
+modGenes = annot$Gene[match(modProbes, annot$Gene)];
+
+modTOM = TOM[inModule, inModule];
+dimnames(modTOM) = list(modProbes, modProbes)
+
+cyt = exportNetworkToCytoscape(modTOM,
+                               edgeFile=paste("Root_CytoEdge_allMods", ".txt", sep=""),
+                               nodeFile=paste("Root_CytoNode_allMods", ".txt", sep=""),
+                               weighted=TRUE, threshold=0.02, nodeNames=modProbes, altNodeNames=modGenes, nodeAttr=moduleColors[inModule])
+
 # Save module colors and labels for use in subsequent parts
 save(MEs, moduleLabels, moduleColors, geneTree, file = "Root-02-networkConstruction-stepByStep.RData")
 
